@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="info" name="example" packages="">
+    <Appenders>
+         <Socket name="socket" host="127.0.0.1" port="513">
+       <PatternLayout pattern="%p: %m%n" charset="UTF-8"/>
+    </Socket>
+
+    </Appenders>
+
+    <!-- Define a logger named 'testSplunkLog4j' which writes to the socket appender we defined above. -->
+    <Loggers>
+        <Root level="INFO"/>
+        <Logger name="splunk.secure.logger" level="info">
+            <AppenderRef ref="socket"/>
+        </Logger>
+    </Loggers>
+</Configuration>
